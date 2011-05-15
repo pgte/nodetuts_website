@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Pedro Teixeira" />
+    <meta name="robots" content="all" />
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+    <title>Node Tuts - Node.js Free screencast tutorials</title>
+    <%= stylesheet_link_tag 'reset', 'text', 'layout'%>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19307016-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <a href="/">
+          <img src="/images/nodetuts_logo.png" alt="Node Tuts" />
+        </a>
+        <div id="navigation">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Episodes</a></li>
+            <li><a href="<%= contacts_path %>">Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div id="links">
+      <div id="linksinner">
+        <%= render '/shared/links' %>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="footer">
+      <div id="innerfooter">
+        <div class="clear"></div>
+        <div id="rss"><%= link_to image_tag('rss.png'), 'http://feeds.feedburner.com/NodeTuts' %></div>
+        <div id="itunes"><a href="http://itunes.apple.com/pt/podcast/node-tuts/id414004165 ">Subscribe with iTunes</a></div>
+        <div id="donate"><%= render :partial => '/shared/donate' %></div>
+        <div id="copy">@2010 - Pedro Teixeira</div>
+        <div style="clear:both"></div>
+      </div>
+    </div>
+  </body>
+</html>

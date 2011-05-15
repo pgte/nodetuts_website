@@ -1,0 +1,5 @@
+<h4 class="date"><%= tutorial.created_at.to_date %></h4>
+<h3>Episode <%= tutorial.number %></h3>
+<h2><%= link_to h(tutorial.title), "#{tutorial_path("#{tutorial.id}-#{tutorial.slug}")}#video"%></h2>
+<h4 class="author">by <%= tutorial.author.name if tutorial.author%></h4>
+<p><%= link_to h(tutorial.body),"#{tutorial_path("#{tutorial.id}-#{tutorial.slug}")}#video" %></p>

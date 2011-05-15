@@ -1,0 +1,19 @@
+<% logger.debug "HL: #{highlighted_tutorial.inspect}" %>
+</div>
+</div>
+<div class="highlight">
+  <div class="article">
+    <div class="body">
+      <h4 class="date"><%= highlighted_tutorial.created_at.to_date %></h4>
+      <h3><%= highlighted_tutorial.last? ? 'Latest Episode' : "Episode #{highlighted_tutorial.number}" %></h3>
+      <h2><%= link_to h(highlighted_tutorial.title), "#{tutorial_path("#{highlighted_tutorial.id}-#{highlighted_tutorial.slug}")}#video"%></h2>
+      <h4 class="author">by <%= highlighted_tutorial.author.name if highlighted_tutorial.author%></h4>
+      <p><%= link_to simple_format(highlighted_tutorial.body),"#{tutorial_path("#{highlighted_tutorial.id}-#{highlighted_tutorial.slug}")}#video" %></p>
+    </div>
+    <%= render '/shared/sponsors' %>
+    <div style="clear:both"></div>
+  </div>
+</div>
+<div id="container">
+<div id="main">
+  
