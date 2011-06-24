@@ -1,10 +1,8 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
-  adapter: mysql
-  database: 'nodetuts'
-  user: 'root'
-  password: 'phatboy123'
+  adapter: sqlite3
+  database: 'db/nodetuts.sqlite3'
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
