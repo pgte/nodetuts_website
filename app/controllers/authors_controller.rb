@@ -3,6 +3,7 @@ class AuthorsController < ApplicationController
   # GET /authors.xml
   def index
     @authors = Author.all
+    @title = 'Authors'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +15,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1.xml
   def show
     @author = Author.find(params[:id])
+    @title = 'Authors'
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +27,7 @@ class AuthorsController < ApplicationController
   # GET /authors/new.xml
   def new
     @author = Author.new
+    @title = 'Authors'
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +38,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1/edit
   def edit
     @author = Author.find(params[:id])
+    @title = 'Authors'
   end
 
   # POST /authors

@@ -2,6 +2,7 @@ class TutorialsController < ApplicationController
   # GET /tutorials
   # GET /tutorials.xml
   def index
+    @title = 'Homepage'
     @tutorials = Tutorial.all :order => 'number DESC'
 
     respond_to do |format|
@@ -9,7 +10,7 @@ class TutorialsController < ApplicationController
       format.rss
     end
   end
-  
+
   def itunes
     @tutorials = Tutorial.all :order => 'number DESC'
 
@@ -23,6 +24,7 @@ class TutorialsController < ApplicationController
   # GET /tutorials/1.xml
   def show
     @tutorial = Tutorial.find(params[:id])
+    @title = @tutorial.title
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,6 +36,7 @@ class TutorialsController < ApplicationController
   # GET /tutorials/new.xml
   def new
     @tutorial = Tutorial.new
+    @title = 'New tutorial'
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +46,7 @@ class TutorialsController < ApplicationController
 
   # GET /tutorials/1/edit
   def edit
+    @title = 'Edit tutorial'
     @tutorial = Tutorial.find(params[:id])
   end
 
@@ -89,5 +93,5 @@ class TutorialsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
 end
